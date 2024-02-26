@@ -1,0 +1,9 @@
+font download link : https://fonts.google.com/selection/embed
+1. import css and paste index.css upper line
+2. go to tailwind.config.js and add this code
+extend: 
+{
+    fontFamily:{
+       poppins: "'Poppins', sans-serif"
+    }
+},
