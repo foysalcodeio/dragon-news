@@ -1,15 +1,33 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
+
     const handleRegister = (e) => {
-        console.log('register')
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name, photo, email, password);
+
+        createUser(email, password)
+        .then((result)=>{
+            console.log(result.user)
+        })
+        .catch((error)=>{
+            console.error(error);
+        })
     }
     return (
         <div>
             <Navbar></Navbar>
             <div className="flex flex-col items-center bg-gray-200 p-20 mt-10">
-            <h2 className="text-3xl text-center">Login Your Account</h2>
+            <h2 className="text-3xl text-center">Register Your Account</h2>
             <form className="md:w-3/4 lg:w-1/2 mx-auto" onSubmit={handleRegister}>
 
 
@@ -17,8 +35,17 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text text-xl">UserName</span>
                     </label>
-                    {/* email */}
+                    {/* name */}
                     <input type="text" name="name" placeholder="Your Name" className="input input-bordered bg-white" autoComplete="username" required />
+                </div>
+
+
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text text-xl">PhotoURL</span>
+                    </label>
+                    {/* photo */}
+                    <input type="text" name="photo" placeholder="photo url" className="input input-bordered bg-white" autoComplete="photo url" required />
                 </div>
 
 
