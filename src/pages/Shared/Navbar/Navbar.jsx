@@ -3,9 +3,10 @@ import userDefaultPhoto from '../../../assets/user.png'
 
 const Navbar = () => {
     const navLinks = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/career">Career</NavLink></li>
+        <li><NavLink className="no-underline" to="/">Home</NavLink></li>
+        <li><NavLink className="no-underline" to="/about">About</NavLink></li>
+        <li><NavLink className="no-underline" to="/career">Career</NavLink></li>
+        <li><NavLink className="no-underline" to="/login">Login</NavLink></li>
     </>
 
     return (

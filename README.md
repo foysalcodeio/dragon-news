@@ -6,4 +6,4 @@ DaisyUI
 MomentJS
 react marquee - for auto slider
 React-icon
-```# dragon-news
+```

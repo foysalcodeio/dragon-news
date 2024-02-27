@@ -19,7 +19,7 @@ const LeftSideNav = () => {
                 key={category.id}
                  >{category.name}</Link>)
             }
-
+            
         </div>
     );
 };
