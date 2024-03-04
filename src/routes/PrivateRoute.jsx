@@ -5,7 +5,9 @@ const privateRoute = ({ children }) => {
 
     const {user, loading} = useContext(AuthContext)
     const location = useLocation();
-    console.log('location are ', location)
+    
+    console.log(location)
+    console.log('location are ', location.pathname)
 
     if(loading){
         return <span className="loading loading-ball loading-lg"></span>
@@ -13,7 +15,7 @@ const privateRoute = ({ children }) => {
     if(user){
         return children;
     }
-    return <Navigate to="/login"></Navigate>
+    return <Navigate  state={location.pathname} to="/login"></Navigate>
 };
 
 export default privateRoute;
