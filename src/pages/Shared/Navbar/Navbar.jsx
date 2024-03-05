@@ -16,6 +16,7 @@ const Navbar = () => {
         <li><NavLink className="no-underline" to="/">Home</NavLink></li>
         <li><NavLink className="no-underline" to="/about">About</NavLink></li>
         <li><NavLink className="no-underline" to="/career">Career</NavLink></li>
+        <li><NavLink className="no-underline" to="/addict">Addict</NavLink></li>
         <li><NavLink className="no-underline" to="/login">Login</NavLink></li>
     </>
 

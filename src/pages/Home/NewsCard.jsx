@@ -4,8 +4,8 @@ const NewsCard = ({ news }) => {
     const { title, image_url, details, _id } = news;
    
     return (
-        <div className="card w-auto bg-base-100 shadow-xl mb-16 border-b-2">
-            <figure><img src={image_url} alt="Shoes" /></figure>
+        <div className="card bg-base-100 shadow-xl mb-16 border-b-2">
+            <figure><img className="h-96" src={image_url} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{title}</h2>
                 {
